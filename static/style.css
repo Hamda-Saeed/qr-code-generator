@@ -1,0 +1,132 @@
+/* Animated Gradient Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main Container */
+.container {
+    max-width: 500px;
+    margin: 5% auto;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+/* Typography */
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-box input {
+    padding: 12px;
+    width: 75%;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.form-box button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    background-color: white;
+    color: #2575fc;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.form-box button:hover {
+    background-color: #f0f0f0;
+}
+
+/* QR Code Box */
+.qr-box {
+    margin-top: 30px;
+}
+
+.qr-img {
+    width: 200px;
+    height: 200px;
+    border: 5px solid white;
+    border-radius: 20px;
+    animation: zoomIn 0.8s ease;
+}
+
+/* Buttons */
+.btns {
+    margin-top: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: white;
+    color: #2575fc;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.6); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 1s ease-in-out;
+}
+
+.zoom-in {
+    animation: zoomIn 0.5s ease-in-out;
+}
