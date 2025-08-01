@@ -67,6 +67,7 @@ def download_qr():
     buffer.seek(0)
 
     return send_file(buffer, mimetype='image/png', as_attachment=True, download_name='qr_code.png')
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=False, host='0.0.0.0', port=port)
+
